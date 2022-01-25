@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'firstApp';
+  title = 'Bienvenue sur le site de Benjamin 1er';
 }
