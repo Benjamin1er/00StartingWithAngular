@@ -1,0 +1,12 @@
+
+<div id="us">
+    <div id= "container">
+        <img [src]="User.photo" [alt]="User.name">
+        <p>First Name: {{User.firstName}}</p>
+        <p>Last Name: {{User.name}}</p>
+        <p>{{User.quote}}</p>
+        <input [(ngModel)]="User.quote">
+        <button (click)="hideAge()">{{isVisible ? "Show Age" : "Hide Age" }}</button>
+        <p [hidden]="isVisible">Age: {{User.age}}</p>
+    </div>
+</div>
