@@ -1,1 +1,39 @@
-<p>You can Sign Up here</p>
+<div id='sign-up'>
+    <h1>Sign-Up here</h1>
+    <form (ngSubmit)="myUserForm.valid && onSubmit()" #myUserForm="ngForm">
+        <div class='col'>
+            <label for="firstname">First Name</label>
+            <input name="firstname" type="text" [(ngModel)]="user.firstName" #firstname="ngModel" required minlength="3" maxlength="15">
+            <div *ngIf="myUserForm.submitted && firstname.errors">
+                <span *ngIf="firstname.errors['required']">Le prénom est requis</span>
+                <span *ngIf="firstname.errors['minlength']">Le prénom doit faire plus de 3 caractères</span>
+                <span *ngIf="firstname.errors['maxlength']">Le prénom doit faire moins de 15 caractères</span>
+            </div>
+        </div>
+        <div class='col'>
+            <label for="lastname">Last Name</label>
+            <input name="lastname" type="text" [(ngModel)]="user.lastName" #lastname="ngModel" required minlength="3" maxlength="15">
+            <div *ngIf="myUserForm.submitted && lastname.errors">
+                <span *ngIf="lastname.errors['required']">Le nom est requis</span>
+                <span *ngIf="lastname.errors['minlength']">Le nom doit faire plus de 3 caractères</span>
+                <span *ngIf="lastname.errors['maxlength']">Le nom doit faire moins de 15 caractères</span>
+            </div>
+        </div>
+        <div class='col'>
+            <label for="mail">Email</label>
+            <input name="mail" type="text"[(ngModel)]="user.email" #email="ngModel" required email >
+            <div *ngIf="myUserForm.submitted && email.errors">
+                <span  *ngIf="email.errors['required']">Veuillez renseigner votre email</span>
+                <span  *ngIf="email.errors['email']">Votre email n'est pas valide</span>
+            </div>
+        </div>
+        <div class='col'>
+            <label for="pasword">Password</label>
+            <input name="password" type="password" [(ngModel)]="user.password" #password="ngModel" required>
+            <div *ngIf="password.errors">
+                <span  *ngIf="myUserForm.submitted && password.errors['required']">Veuillez rentrer un mot de passe</span>
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>

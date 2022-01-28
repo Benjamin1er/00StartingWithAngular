@@ -1,20 +1,21 @@
-<form>
+<form (ngSubmit)="myForm.valid && onSubmit()" #myForm="ngForm">
     <div>
         <label for="title-order">Title</label>
-        <input name="title-order" type="text" required maxlength="5" >
+        <input name="title-order" type="text" required maxlength="5" [(ngModel)]="model.title" >
     </div>
     <div>
         <label for="quantity-order">Quantité</label>
-        <input name="quantity-order" type="number" required>
+        <input name="quantity-order" type="number" required [(ngModel)]="model.quantity">
     </div>
     <div>
         <label for="date-order">Date de commande</label>
-        <input name="date-order" type="date" required>
+        <input name="date-order" type="date" required [(ngModel)]="model.date">
     </div>
     <div>
         <label for="contact-order">Contact</label>
-        <input name="contact-order" type="text" required email>
+        <input name="contact-order" type="text" required email [(ngModel)]="model.contact">
     </div>
     <button type="reset">Restaurer</button>
     <button type="submit">Sauvegarder</button>
 </form>
+
