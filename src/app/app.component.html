@@ -1,17 +1,3 @@
-<ul>
-    <li [ngStyle]="{backgroundColor: isVital ?  'red' : 'yellow'}" >Pommes de terre</li>
-    <li [ngClass]="{'vital': isVital}">Fromage</li>
-    <li>Jambon</li>
-    <li>Cornichons</li>
-    <li>Chou Fleur</li>
-</ul>
-<ul *ngIf="displayList">
-    <li>Brandon</li>
-    <li>Linda</li>
-    <li>Courtney</li>
-</ul>
-<ul *ngFor="let people of peopleThatMakeLists">
-    <li>{{people}}</li>
-</ul>
-<!-- <app-user-profile></app-user-profile> -->
+
+<app-menu></app-menu>
 <router-outlet></router-outlet>

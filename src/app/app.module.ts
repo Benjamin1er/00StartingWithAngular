@@ -7,13 +7,17 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
 import { MonComposantComponent } from './mon-composant/mon-composant.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { MenuComponent } from './menu/menu.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     MonComposantComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    MenuComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
