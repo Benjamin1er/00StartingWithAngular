@@ -1,0 +1,35 @@
+#developer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    #developer-container {
+        display: flex;
+        width: 70%;
+        height: 70%;
+        background-color: white;
+        overflow: hidden;
+        border-radius: 60px;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        img {
+            height: 100%;
+        }
+        #developer-informations {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 40px;
+            #skills {
+                display: flex;
+                justify-content: space-around;
+                #skill {
+                    min-width: 20%;
+                    border: 1px solid grey;
+                    border-radius: 10px;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+

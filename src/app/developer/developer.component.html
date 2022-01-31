@@ -1,0 +1,18 @@
+
+<div id='developer'>
+    <div id='developer-container'>
+        <div id='developer-img'>
+            <img src={{developer.picture}} alt="Lord">
+        </div>
+        <div id='developer-informations'>
+            <h1>{{developer.firstName}} {{developer.lastName}}</h1>
+            <p>Age: {{developer.age}}</p>
+            <p>Sexe: {{developer.sexe}}</p>
+            <p>Bio: "{{developer.bio}}"</p>
+            <h2>Skills</h2>
+            <div id='skills'>
+                <app-skill id='skill' *ngFor="let skill of developer.skills" [skill] ="skill"></app-skill>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,6 +12,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { MyFormComponent } from './my-form/my-form.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
 import { MagicOvenComponent } from './magic-oven/magic-oven.component';
+import { DeveloperComponent } from './developer/developer.component';
+import { SkillComponent } from './skill/skill.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { MagicOvenComponent } from './magic-oven/magic-oven.component';
     SignUpComponent,
     MyFormComponent,
     KitchenComponent,
-    MagicOvenComponent
+    MagicOvenComponent,
+    DeveloperComponent,
+    SkillComponent
   ],
   imports: [
     BrowserModule,
