@@ -1,6 +1,11 @@
 
 <!-- <app-menu></app-menu> -->
+
 <!-- <app-kitchen></app-kitchen> -->
 
-<app-developer></app-developer>
+<!-- <app-developer></app-developer> -->
+
+<app-create-onomatopia (getOnomatopia)="onReceiveNewOnomatopia($event)" ></app-create-onomatopia>
+
+<div *ngFor="let ono of onomatopeias">{{ono}}</div>
 <router-outlet></router-outlet>

@@ -14,12 +14,18 @@ export class KitchenComponent implements OnInit {
   sugarQuantity: number | undefined;
   eggQuantity: number | undefined;
   numberOfCookies: number | undefined;
-  
+
   cook = false;
+  
+  cookiesCooked: number = 0;
+  
   ngOnInit(): void {
   }
   startCooking() {
     this.cook = true;
+  }
+  onGetCookies($event: number) {
+    this.cookiesCooked =+ $event;
   }
 
 }

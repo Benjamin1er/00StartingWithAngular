@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-magic-oven',
@@ -25,9 +25,16 @@ export class MagicOvenComponent implements OnInit {
   @Input()
   startCooking: boolean | undefined
   
+  @Output()
+  getCookies:EventEmitter<any> = new EventEmitter(); 
+  
+  sendCookies() {
+    this.getCookies.emit(this.numberOfCookies);
+  }
+  
   constructor() { }
-
+  
   ngOnInit(): void {
   }
-
+  
 }
