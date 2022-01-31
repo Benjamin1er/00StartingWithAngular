@@ -1,0 +1,8 @@
+<div id='cocktail-list'>
+    <div *ngFor="let cocktail of CocktailService.getCocktail()" id='cocktail'>
+        <img src={{cocktail.picture}} alt={{cocktail.name}}>
+        <h1>{{cocktail.name}}</h1>
+        <h2>{{cocktail.price}}</h2>
+    </div>
+</div>
+

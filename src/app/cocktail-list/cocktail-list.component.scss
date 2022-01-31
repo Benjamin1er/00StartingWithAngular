@@ -1,0 +1,25 @@
+#cocktail-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 140px 50px;
+    #cocktail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        width: 300px;
+        margin: 40px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 1px solid rgba(0, 0, 0, 0.24);
+        border-radius: 20px;
+        background-color: lightgoldenrodyellow;
+        img {
+            width: 100%;        }
+    }
+    #cocktail:hover {
+        transform: scale(1.2em);
+        transition: all 0.7s ease;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+}

@@ -5,7 +5,9 @@
 
 <!-- <app-developer></app-developer> -->
 
-<app-create-onomatopia (getOnomatopia)="onReceiveNewOnomatopia($event)" ></app-create-onomatopia>
+<!-- <app-create-onomatopia (getOnomatopia)="onReceiveNewOnomatopia($event)" ></app-create-onomatopia> -->
+
+<app-cocktail-list></app-cocktail-list>
 
 <div *ngFor="let ono of onomatopeias">{{ono}}</div>
 <router-outlet></router-outlet>
