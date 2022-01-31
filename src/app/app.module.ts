@@ -10,6 +10,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MenuComponent } from './menu/menu.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { MyFormComponent } from './my-form/my-form.component';
+import { KitchenComponent } from './kitchen/kitchen.component';
+import { MagicOvenComponent } from './magic-oven/magic-oven.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { MyFormComponent } from './my-form/my-form.component';
     UserProfileComponent,
     MenuComponent,
     SignUpComponent,
-    MyFormComponent
+    MyFormComponent,
+    KitchenComponent,
+    MagicOvenComponent
   ],
   imports: [
     BrowserModule,
