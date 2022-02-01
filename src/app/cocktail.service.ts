@@ -1,4 +1,7 @@
 import { Injectable } from "@angular/core";
+import { HttpClient } from  '@angular/common/http';
+import { Observable } from  'rxjs';
+import { map } from  "rxjs/operators";
 
 @Injectable({
     providedIn: 'root'
@@ -6,31 +9,21 @@ import { Injectable } from "@angular/core";
 
 export class CocktailService {
 
-    constructor() {}
-    public getCocktail():ICocktail[] {
-        return [
-            {
-                name: "Rose",
-                price: "12€",
-                picture: "https://www.thecocktaildb.com/images/media/drink/8kxbvq1504371462.jpg"
-            },
-            {
-                name: "Spice 75",
-                price: "14€",
-                picture: "https://www.thecocktaildb.com/images/media/drink/0108c41576797064.jpg"
-            },
-            {
-                name: "Greyhound",
-                price: "12€",
-                picture: "https://www.thecocktaildb.com/images/media/drink/g5upn41513706732.jpg"
-            },
+    private service: HttpClient;
 
-        ]
+    constructor(param_service: HttpClient) {
+        this.service = param_service;
+    }
+    public getCocktail(): Observable<ICocktail[]> {
+        const obs1:Observable<any> = this.service.get("../assets/cocktails.json");
+        const treatment = (param_data:any) => {
+            return param_data as ICocktail[];
+        };
+        return obs1.pipe( map( treatment) );
     }
     
 }
-
-interface ICocktail {
+export interface ICocktail {
     name: string;
     price: string;
     picture: string;

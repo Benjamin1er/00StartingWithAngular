@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CocktailService } from '../cocktail.service';
+import { CocktailService, ICocktail } from '../cocktail.service';
 
 @Component({
   selector: 'app-cocktail-list',
@@ -8,9 +8,18 @@ import { CocktailService } from '../cocktail.service';
 })
 export class CocktailListComponent implements OnInit {
 
-  constructor(public CocktailService:CocktailService) { }
-
-  ngOnInit(): void {
+  public cocktails:ICocktail[] = [];
+  private service:CocktailService;
+  public test = () => console.log(this.cocktails);
+  constructor(param_service:CocktailService) { 
+    this.service = param_service
   }
 
+  public ngOnInit(): void {
+    this.service.getCocktail().subscribe(
+      (param:ICocktail[]) => {
+        this.cocktails = param;
+      }
+    )
+  }
 }
