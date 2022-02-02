@@ -17,6 +17,9 @@ import { SkillComponent } from './skill/skill.component';
 import { CreateOnomatopiaComponent } from './create-onomatopia/create-onomatopia.component';
 import { CocktailListComponent } from './cocktail-list/cocktail-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserComponent } from './user/user.component';
+
 
 @NgModule({
   declarations: [
@@ -33,12 +36,14 @@ import { HttpClientModule } from '@angular/common/http';
     SkillComponent,
     CreateOnomatopiaComponent,
     CocktailListComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
