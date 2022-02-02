@@ -1,34 +1,28 @@
-<div id='user'>
-    <label>
-        Username:
-        <input type="text" [formControl]="username">
-    </label>
-    <label>
-        Email:
-        <input type="text" [formControl]="email">
-    </label>
-    <label>
-        Password:
-        <input type="password" [formControl]="password">
-    </label>
-    <label>
-        Street:
-        <input type="text" [formControl]="street">
-    </label>
-    <label>
-        ZIP Code:
-        <input type="text" [formControl]="zip">
-    </label>    <label>
-        City:
-        <input type="text" [formControl]="city">
-    </label>
-    <button (click)="createUser()">Submit</button>
-    <div *ngIf="submitted">
-        <div>Username: {{user.username}}</div>
-        <div>Email: {{user.email}}</div>
-        <div>Password: {{user.password}}</div>
-        <div>Address: {{user.address.street}} {{user.address.zip}} {{user.address.city}}</div>
+
+<form class="user" [formGroup]="userForm" (ngSubmit)="createUser()" >
+    <div class="user">
+        <label for="username">Username:
+            <input type="text" formControlName="username">
+        </label>
     </div>
-</div>
-
-
+    <div class="user" formGroupName="credentials">
+        <label for="email">Email:
+            <input type="text" formControlName="email">
+        </label>
+        <label for="password">Password:
+            <input type="text" formControlName="password">
+        </label>
+    </div>
+    <div class="user" formGroupName="address">
+        <label for="street">Street:
+            <input type="text" formControlName="street">
+        </label>
+        <label for="zip">Zip Code:
+            <input type="text" formControlName="zip">
+        </label>
+        <label for="city">City:
+            <input type="text" formControlName="city">
+        </label>
+    </div>
+    <button type="submit">Submit</button>
+</form>

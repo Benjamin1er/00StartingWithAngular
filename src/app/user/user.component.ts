@@ -1,4 +1,4 @@
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,14 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  username = new FormControl('');
-  email = new FormControl('');
-  password = new FormControl('');
-  street = new FormControl('');
-  zip = new FormControl('');
-  city = new FormControl('');
 
-  public submitted = false;
+  userForm = new FormGroup({
+    username: new FormControl(''),
+    credentials: new FormGroup({
+      email: new FormControl(''),
+      password: new FormControl('')
+    }),
+    address: new FormGroup({
+      street: new FormControl(''),
+      zip: new FormControl(''),
+      city: new FormControl('')
+    })
+      
+  })
+  
   
   public user = (
     {
@@ -35,18 +42,7 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
   createUser(): void {
-    this.user = {
-      username: this.username.value,
-      email: this.email.value,
-      password: this.password.value,
-      address: {
-        street: this.street.value,
-        zip: this.zip.value,
-        city: this.city.value
-      }
-    }
-    this.submitted = true;
-    console.log(this.user);
+    console.log(this.userForm.value)
   }
 
 }
